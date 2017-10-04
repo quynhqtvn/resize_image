@@ -1,0 +1,20 @@
+en:
+  hello: "Hello world"
+  image:
+    file_not_valid: "File is not valid"
+    file_type_not_match: "File type does not match. Please choose file that map with file type."
+    required_field_width_height: "Width and Height is required fields."
+    required_field_capacity: "Capacity is required field."
+    capacity_must_larger: "Capacity must larger than image size"
+    title: "Create Image File"
+    file_type: "File type"
+    template_image: "Template image"
+    capacity: "Capacity"
+    dimension: "Dimension"
+    width: "Width"
+    height: "Height"
+    submit: "Create file"
+  document_files:
+    validate:
+      template_data: "Template need the default data, check blank option if you want let it empty!"
+      column_name: "Duplicate column name is not accepted!"

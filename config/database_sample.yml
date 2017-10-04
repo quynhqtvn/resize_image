@@ -1,0 +1,44 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+  password: <%= ENV["DATABASE_PASSWORD"] %>
+  redis:
+    host: <%= ENV["REDIS_HOSTNAME"] %>
+    port: 6379
+    db: 0
+    options:
+      namespace: dtg-dev
+
+development:
+  <<: *default
+  database: dtg_development
+
+framgia_staging:
+  <<: *default
+  database: <%= ENV["DATABASE_NAME"] %>
+  host: <%= ENV["DATABASE_HOSTNAME"] %>
+  port: 3306
+  username: <%= ENV["DATABASE_USERNAME"] %>
+  password: <%= ENV["DATABASE_PASSWORD"] %>
+
+staging:
+  <<: *default
+  database: <%= ENV["DATABASE_NAME"] %>
+  host: <%= ENV["DATABASE_HOSTNAME"] %>
+  port: 3306
+  username: <%= ENV["DATABASE_USERNAME"] %>
+  password: <%= ENV["DATABASE_PASSWORD"] %>
+
+production:
+  <<: *default
+  database: <%= ENV["DATABASE_NAME"] %>
+  host: <%= ENV["DATABASE_HOSTNAME"] %>
+  port: 3306
+  username: <%= ENV["DATABASE_USERNAME"] %>
+  password: <%= ENV["DATABASE_PASSWORD"] %>
+
+test:
+  <<: *default
+  database: dtg_test
